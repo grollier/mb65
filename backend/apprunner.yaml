@@ -1,0 +1,13 @@
+version: 1.0
+runtime: docker
+build:
+  dockerfile: Dockerfile
+  context: ./backend
+  platform: linux/amd64
+network:
+  port: 80  # FastAPI is configured to run on port 80 in the Dockerfile
+environment:
+  API_ENV: development
+volumes:
+  - source: /app/static
+    target: /app/static

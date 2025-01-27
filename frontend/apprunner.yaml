@@ -1,0 +1,10 @@
+version: 1.0
+runtime: docker
+build:
+  dockerfile: Dockerfile
+  context: ./frontend
+  platform: linux/amd64
+network:
+  port: 3000  # Next.js runs on port 3000 by default
+environment:
+  NODE_ENV: development
